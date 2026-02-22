@@ -1,14 +1,10 @@
-// server/lib/guardarPrecios.js
 import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.warn('[Guardar] ADVERTENCIA: SUPABASE_URL o SUPABASE_SERVICE_KEY no configurados');
+  console.warn('[Guardar] ADVERTENCIA: Variables de Supabase no configuradas');
 }
 
 const supabase = supabaseUrl && supabaseKey 
@@ -17,47 +13,23 @@ const supabase = supabaseUrl && supabaseKey
 
 export async function guardarPreciosEnSupabase(precios) {
   if (!supabase) {
-    return {
-      insertados: 0,
-      ignorados: precios.length,
-      errores: ['Supabase no configurado']
-    };
+    return { insertados: 0, ignorados: precios.length, errores: ['Supabase no configurado'] };
   }
 
-  // Filtrar solo los que tienen producto_id válido
   const preciosValidos = precios.filter(p => p.producto_id && p.producto_id !== 'desconocido');
   const preciosIgnorados = precios.filter(p => !p.producto_id || p.producto_id === 'desconocido');
 
   if (preciosValidos.length === 0) {
-    return {
-      insertados: 0,
-      ignorados: preciosIgnorados.length,
-      errores: []
-    };
+    return { insertados: 0, ignorados: preciosIgnorados.length, errores: [] };
   }
-
-  // Preparar datos para inserción
-  const datosParaInsertar = preciosValidos.map(p => ({
-    producto_id: p.producto_id,
-    precio: p.precio,
-    fuente: p.fuente,
-    fecha: p.fecha || new Date().toISOString()
-  }));
 
   try {
     const { data, error } = await supabase
       .from('precios_historico')
-      .insert(datosParaInsertar)
+      .insert(preciosValidos)
       .select();
 
-    if (error) {
-      console.error('[Guardar] Error de Supabase:', error);
-      return {
-        insertados: 0,
-        ignorados: preciosIgnorados.length,
-        errores: [error.message]
-      };
-    }
+    if (error) throw error;
 
     return {
       insertados: data?.length || 0,
@@ -65,7 +37,7 @@ export async function guardarPreciosEnSupabase(precios) {
       errores: []
     };
   } catch (error) {
-    console.error('[Guardar] Error inesperado:', error);
+    console.error('[Guardar] Error:', error);
     return {
       insertados: 0,
       ignorados: preciosIgnorados.length,
