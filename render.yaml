@@ -3,6 +3,7 @@ services:
   - type: web
     name: kipc-frontend
     runtime: node
+    plan: free                    # <--- AÑADE ESTA LÍNEA
     buildCommand: npm install && npm run build
     startCommand: npm run preview
     envVars:
@@ -15,6 +16,7 @@ services:
   - type: web
     name: kipc-backend
     runtime: node
+    plan: free                    # <--- AÑADE ESTA LÍNEA
     rootDir: server
     buildCommand: npm install
     startCommand: node index.js
@@ -31,6 +33,7 @@ services:
   - type: cron
     name: kipc-scraper
     runtime: node
+    plan: free                    # <--- AÑADE ESTA LÍNEA
     rootDir: server
     buildCommand: npm install
     startCommand: node scripts/cron-scrape.js
