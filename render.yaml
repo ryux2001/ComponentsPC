@@ -13,18 +13,10 @@ services:
 
   - type: web
     name: kipc-backend
-    runtime: node
+    runtime: docker
     plan: free
     rootDir: server
-    buildCommand: |
-      npm install -g pnpm
-      pnpm install
-      echo "=== VERIFICANDO EXPRESS ==="
-      ls -la node_modules/express 2>/dev/null || echo "Express no encontrado en node_modules"
-      echo "=== ESTRUCTURA DE NODE_MODULES ==="
-      ls -la node_modules/
-      mkdir -p node_modules/.bin
-    startCommand: node index.js
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: SUPABASE_URL
         sync: false
@@ -32,9 +24,11 @@ services:
         sync: false
       - key: NODE_ENV
         value: production
-      - key: NODE_PATH
-        value: /opt/render/project/src/server/node_modules
     healthCheckPath: /api/health
+    buildCommand: |
+      chmod +x install.sh
+      ./install.sh
+      ls -la node_modules/ | grep express
 
   - type: cron
     name: kipc-scraper
