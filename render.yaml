@@ -19,7 +19,7 @@ services:
     buildCommand: | 
       pnpm install
       pnpm list express
-    startCommand: node index.js
+    startCommand: pnpm start
     envVars:
       - key: SUPABASE_URL
         sync: false
