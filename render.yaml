@@ -3,8 +3,8 @@ services:
     name: kipc-frontend
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm run preview
+    buildCommand: pnpm install && npm run build
+    startCommand: pnpm run preview
     envVars:
       - key: VITE_SUPABASE_URL
         sync: false
@@ -16,7 +16,9 @@ services:
     runtime: node
     plan: free
     rootDir: server
-    buildCommand: npm install
+    buildCommand: | 
+      pnpm install
+      pnpm list express
     startCommand: node index.js
     envVars:
       - key: SUPABASE_URL
