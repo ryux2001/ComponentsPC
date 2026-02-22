@@ -1,0 +1,768 @@
+[
+  {
+    "id": "gpu_1",
+    "nombre": "nvidia GeForce RTX 3060 12GB",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2021",
+    "precio": 329,
+    "precioRecomendado": 299,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": 3584,
+      "tensorCores": 112,
+      "rtCores": 28,
+      "longitud": 242,
+      "tdp": 170
+    },
+    "benchmarks": {
+      "timeSpy": 8750,
+      "fireStrike": 20500,
+      "portRoyal": 5050,
+      "fps1080pUltra": 80,
+      "fps1440pUltra": 60,
+      "fps4kUltra": 30
+    }
+  },
+  {
+    "id": "gpu_2",
+    "nombre": "nvidia GeForce RTX 3060 Ti",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2020",
+    "precio": 399,
+    "precioRecomendado": 399,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": 4864,
+      "tensorCores": 152,
+      "rtCores": 38,
+      "longitud": 242,
+      "tdp": 200
+    },
+    "benchmarks": {
+      "timeSpy": 11700,
+      "fireStrike": 29000,
+      "portRoyal": 6900,
+      "fps1080pUltra": 100,
+      "fps1440pUltra": 75,
+      "fps4kUltra": 42
+    }
+  },
+  {
+    "id": "gpu_3",
+    "nombre": "nvidia GeForce RTX 4060",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2023",
+    "precio": 299,
+    "precioRecomendado": 299,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 128,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": 3072,
+      "tensorCores": 96,
+      "rtCores": 24,
+      "longitud": 244,
+      "tdp": 115
+    },
+    "benchmarks": {
+      "timeSpy": 10500,
+      "fireStrike": 26000,
+      "portRoyal": 6000,
+      "fps1080pUltra": 90,
+      "fps1440pUltra": 65,
+      "fps4kUltra": 35
+    }
+  },
+  {
+    "id": "gpu_4",
+    "nombre": "nvidia GeForce RTX 4070",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2023",
+    "precio": 599,
+    "precioRecomendado": 549,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6X",
+      "nucleosCuda": 5888,
+      "tensorCores": 184,
+      "rtCores": 46,
+      "longitud": 244,
+      "tdp": 200
+    },
+    "benchmarks": {
+      "timeSpy": 17800,
+      "fireStrike": 43000,
+      "portRoyal": 11200,
+      "fps1080pUltra": 140,
+      "fps1440pUltra": 105,
+      "fps4kUltra": 60
+    }
+  },
+  {
+    "id": "gpu_5",
+    "nombre": "amd Radeon RX 6600",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2021",
+    "precio": 329,
+    "precioRecomendado": 299,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 128,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "longitud": 190,
+      "tdp": 132
+    },
+    "benchmarks": {
+      "timeSpy": 8100,
+      "fireStrike": 23000,
+      "portRoyal": 3800,
+      "fps1080pUltra": 75,
+      "fps1440pUltra": 50,
+      "fps4kUltra": 25
+    }
+  },
+  {
+    "id": "gpu_6",
+    "nombre": "amd Radeon RX 6700 XT",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2021",
+    "precio": 479,
+    "precioRecomendado": 479,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "longitud": 267,
+      "tdp": 230
+    },
+    "benchmarks": {
+      "timeSpy": 12800,
+      "fireStrike": 35000,
+      "portRoyal": 5800,
+      "fps1080pUltra": 110,
+      "fps1440pUltra": 80,
+      "fps4kUltra": 45
+    }
+  },
+  {
+    "id": "gpu_7",
+    "nombre": "amd Radeon RX 7600",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2023",
+    "precio": 269,
+    "precioRecomendado": 269,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 128,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "longitud": 204,
+      "tdp": 165
+    },
+    "benchmarks": {
+      "timeSpy": 10800,
+      "fireStrike": 31000,
+      "portRoyal": 5500,
+      "fps1080pUltra": 92,
+      "fps1440pUltra": 62,
+      "fps4kUltra": 30
+    }
+  },
+  {
+    "id": "gpu_8",
+    "nombre": "nvidia GeForce RTX 3080 10GB",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q3 2020",
+    "precio": 699,
+    "precioRecomendado": 699,
+    "parametrosBase": {
+      "vram": 10,
+      "bus": 320,
+      "tipoVram": "GDDR6X",
+      "nucleosCuda": 8704,
+      "tensorCores": 272,
+      "rtCores": 68,
+      "longitud": 285,
+      "tdp": 320
+    },
+    "benchmarks": {
+      "timeSpy": 17500,
+      "fireStrike": 42000,
+      "portRoyal": 11500,
+      "fps1080pUltra": 160,
+      "fps1440pUltra": 120,
+      "fps4kUltra": 75
+    }
+  },
+  {
+    "id": "gpu_9",
+    "nombre": "nvidia GeForce RTX 3070 8GB",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2020",
+    "precio": 499,
+    "precioRecomendado": 499,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": 5888,
+      "tensorCores": 184,
+      "rtCores": 46,
+      "longitud": 242,
+      "tdp": 220
+    },
+    "benchmarks": {
+      "timeSpy": 13600,
+      "fireStrike": 34000,
+      "portRoyal": 8200,
+      "fps1080pUltra": 120,
+      "fps1440pUltra": 90,
+      "fps4kUltra": 55
+    }
+  },
+  {
+    "id": "gpu_10",
+    "nombre": "nvidia GeForce RTX 4070 Ti",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2023",
+    "precio": 799,
+    "precioRecomendado": 799,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6X",
+      "nucleosCuda": 7680,
+      "tensorCores": 240,
+      "rtCores": 60,
+      "longitud": 267,
+      "tdp": 285
+    },
+    "benchmarks": {
+      "timeSpy": 22500,
+      "fireStrike": 52000,
+      "portRoyal": 14000,
+      "fps1080pUltra": 180,
+      "fps1440pUltra": 140,
+      "fps4kUltra": 85
+    }
+  },
+  {
+    "id": "gpu_11",
+    "nombre": "amd Radeon RX 6800 XT",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2020",
+    "precio": 649,
+    "precioRecomendado": 649,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "longitud": 267,
+      "tdp": 300
+    },
+    "benchmarks": {
+      "timeSpy": 19000,
+      "fireStrike": 48000,
+      "portRoyal": 9500,
+      "fps1080pUltra": 150,
+      "fps1440pUltra": 115,
+      "fps4kUltra": 70
+    }
+  },
+  {
+    "id": "gpu_12",
+    "nombre": "amd Radeon RX 7900 XT",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2022",
+    "precio": 899,
+    "precioRecomendado": 899,
+    "parametrosBase": {
+      "vram": 20,
+      "bus": 384,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "longitud": 336,
+      "tdp": 315
+    },
+    "benchmarks": {
+      "timeSpy": 26000,
+      "fireStrike": 60000,
+      "portRoyal": 13800,
+      "fps1080pUltra": 195,
+      "fps1440pUltra": 155,
+      "fps4kUltra": 95
+    }
+  },
+  {
+    "id": "gpu_13",
+    "nombre": "nvidia GeForce RTX 5090",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 1999,
+    "precioRecomendado": 1999,
+    "parametrosBase": {
+      "vram": 32,
+      "bus": 512,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 21760,
+      "tensorCores": 680,
+      "rtCores": 170,
+      "longitud": 336,
+      "tdp": 600
+    },
+    "benchmarks": {
+      "timeSpy": 38500,
+      "fireStrike": 85000,
+      "portRoyal": 26000,
+      "fps1080pUltra": 280,
+      "fps1440pUltra": 230,
+      "fps4kUltra": 145
+    }
+  },
+  {
+    "id": "gpu_14",
+    "nombre": "Intel Arc A310",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2022",
+    "precio": 99,
+    "precioRecomendado": 99,
+    "parametrosBase": {
+      "vram": 4,
+      "bus": 64,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 6,
+      "longitud": 169,
+      "tdp": 30
+    },
+    "benchmarks": {
+      "timeSpy": 2200,
+      "fireStrike": 6500,
+      "portRoyal": 900,
+      "fps1080pUltra": 25,
+      "fps1440pUltra": 15,
+      "fps4kUltra": 8
+    }
+  },
+  {
+    "id": "gpu_15",
+    "nombre": "Intel Arc A380",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q3 2022",
+    "precio": 139,
+    "precioRecomendado": 139,
+    "parametrosBase": {
+      "vram": 6,
+      "bus": 96,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 8,
+      "longitud": 190,
+      "tdp": 75
+    },
+    "benchmarks": {
+      "timeSpy": 4200,
+      "fireStrike": 11000,
+      "portRoyal": 2100,
+      "fps1080pUltra": 45,
+      "fps1440pUltra": 28,
+      "fps4kUltra": 14
+    }
+  },
+  {
+    "id": "gpu_16",
+    "nombre": "Intel Arc A580",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2023",
+    "precio": 179,
+    "precioRecomendado": 179,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 24,
+      "longitud": 240,
+      "tdp": 175
+    },
+    "benchmarks": {
+      "timeSpy": 8600,
+      "fireStrike": 22000,
+      "portRoyal": 4500,
+      "fps1080pUltra": 72,
+      "fps1440pUltra": 48,
+      "fps4kUltra": 24
+    }
+  },
+  {
+    "id": "gpu_17",
+    "nombre": "Intel Arc A750",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2022",
+    "precio": 249,
+    "precioRecomendado": 249,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 28,
+      "longitud": 267,
+      "tdp": 225
+    },
+    "benchmarks": {
+      "timeSpy": 10200,
+      "fireStrike": 25500,
+      "portRoyal": 5200,
+      "fps1080pUltra": 85,
+      "fps1440pUltra": 58,
+      "fps4kUltra": 28
+    }
+  },
+  {
+    "id": "gpu_18",
+    "nombre": "Intel Arc A770 16GB",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2022",
+    "precio": 349,
+    "precioRecomendado": 349,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 32,
+      "longitud": 267,
+      "tdp": 225
+    },
+    "benchmarks": {
+      "timeSpy": 11200,
+      "fireStrike": 28000,
+      "portRoyal": 5800,
+      "fps1080pUltra": 95,
+      "fps1440pUltra": 65,
+      "fps4kUltra": 32
+    }
+  },
+  {
+    "id": "gpu_19",
+    "nombre": "Intel Arc B570",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 219,
+    "precioRecomendado": 219,
+    "parametrosBase": {
+      "vram": 10,
+      "bus": 160,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 18,
+      "longitud": 272,
+      "tdp": 150
+    },
+    "benchmarks": {
+      "timeSpy": 12500,
+      "fireStrike": 32000,
+      "portRoyal": 6200,
+      "fps1080pUltra": 88,
+      "fps1440pUltra": 62,
+      "fps4kUltra": 30
+    }
+  },
+  {
+    "id": "gpu_20",
+    "nombre": "Intel Arc B580",
+    "marca": "intel",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q4 2024",
+    "precio": 249,
+    "precioRecomendado": 249,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "xeCores": 20,
+      "longitud": 272,
+      "tdp": 190
+    },
+    "benchmarks": {
+      "timeSpy": 13800,
+      "fireStrike": 35500,
+      "portRoyal": 7000,
+      "fps1080pUltra": 98,
+      "fps1440pUltra": 70,
+      "fps4kUltra": 36
+    }
+  },
+  {
+    "id": "gpu_21",
+    "nombre": "nvidia GeForce RTX 5080",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 999,
+    "precioRecomendado": 999,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 10752,
+      "tensorCores": 336,
+      "rtCores": 84,
+      "longitud": 310,
+      "tdp": 360
+    },
+    "benchmarks": {
+      "timeSpy": 32000,
+      "fireStrike": 72000,
+      "portRoyal": 21000,
+      "fps1080pUltra": 240,
+      "fps1440pUltra": 185,
+      "fps4kUltra": 115
+    }
+  },
+  {
+    "id": "gpu_22",
+    "nombre": "nvidia GeForce RTX 5070 Ti",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 749,
+    "precioRecomendado": 749,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 8960,
+      "tensorCores": 280,
+      "rtCores": 70,
+      "longitud": 310,
+      "tdp": 300
+    },
+    "benchmarks": {
+      "timeSpy": 27500,
+      "fireStrike": 62000,
+      "portRoyal": 18000,
+      "fps1080pUltra": 210,
+      "fps1440pUltra": 165,
+      "fps4kUltra": 100
+    }
+  },
+  {
+    "id": "gpu_23",
+    "nombre": "nvidia GeForce RTX 5070",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 549,
+    "precioRecomendado": 549,
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 6144,
+      "tensorCores": 192,
+      "rtCores": 48,
+      "longitud": 267,
+      "tdp": 250
+    },
+    "benchmarks": {
+      "timeSpy": 20500,
+      "fireStrike": 48000,
+      "portRoyal": 13500,
+      "fps1080pUltra": 175,
+      "fps1440pUltra": 130,
+      "fps4kUltra": 78
+    }
+  },
+  {
+    "id": "gpu_24",
+    "nombre": "nvidia GeForce RTX 5060 Ti 16GB",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2025",
+    "precio": 429,
+    "precioRecomendado": 429,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 128,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 4608,
+      "tensorCores": 144,
+      "rtCores": 36,
+      "longitud": 244,
+      "tdp": 180
+    },
+    "benchmarks": {
+      "timeSpy": 14500,
+      "fireStrike": 37000,
+      "portRoyal": 8500,
+      "fps1080pUltra": 115,
+      "fps1440pUltra": 85,
+      "fps4kUltra": 45
+    }
+  },
+  {
+    "id": "gpu_25",
+    "nombre": "nvidia GeForce RTX 5060",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2025",
+    "precio": 299,
+    "precioRecomendado": 299,
+    "parametrosBase": {
+      "vram": 8,
+      "bus": 128,
+      "tipoVram": "GDDR7",
+      "nucleosCuda": 3840,
+      "tensorCores": 120,
+      "rtCores": 30,
+      "longitud": 244,
+      "tdp": 145
+    },
+    "benchmarks": {
+      "timeSpy": 11800,
+      "fireStrike": 30000,
+      "portRoyal": 6800,
+      "fps1080pUltra": 95,
+      "fps1440pUltra": 68,
+      "fps4kUltra": 34
+    }
+  },
+  {
+    "id": "gpu_26",
+    "nombre": "amd Radeon RX 9070 XT",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 599,
+    "precioRecomendado": 599,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "computeUnits": 64,
+      "longitud": 267,
+      "tdp": 304
+    },
+    "benchmarks": {
+      "timeSpy": 26500,
+      "fireStrike": 61000,
+      "portRoyal": 15000,
+      "fps1080pUltra": 200,
+      "fps1440pUltra": 155,
+      "fps4kUltra": 92
+    }
+  },
+  {
+    "id": "gpu_27",
+    "nombre": "amd Radeon RX 9070",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2025",
+    "precio": 549,
+    "precioRecomendado": 549,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 256,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "computeUnits": 56,
+      "longitud": 267,
+      "tdp": 220
+    },
+    "benchmarks": {
+      "timeSpy": 23500,
+      "fireStrike": 55000,
+      "portRoyal": 13200,
+      "fps1080pUltra": 180,
+      "fps1440pUltra": 138,
+      "fps4kUltra": 82
+    }
+  },
+  {
+    "id": "gpu_28",
+    "nombre": "amd Radeon RX 9060 XT 16GB",
+    "marca": "amd",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q2 2025",
+    "precio": 349,
+    "precioRecomendado": 349,
+    "parametrosBase": {
+      "vram": 16,
+      "bus": 128,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": null,
+      "tensorCores": null,
+      "rtCores": null,
+      "computeUnits": 32,
+      "longitud": 244,
+      "tdp": 182
+    },
+    "benchmarks": {
+      "timeSpy": 15200,
+      "fireStrike": 38500,
+      "portRoyal": 8800,
+      "fps1080pUltra": 118,
+      "fps1440pUltra": 88,
+      "fps4kUltra": 44
+    }
+  }
+]

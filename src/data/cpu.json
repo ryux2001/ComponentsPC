@@ -1,0 +1,310 @@
+[
+  {
+    "id": "cpu_1",
+    "nombre": "i5-12400F",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q1'2022",
+    "tipo": "cpu",
+    "precio": 80,
+    "precioRecomendado": 100,
+    "parametrosBase": {
+      "nucleos": 6,
+      "hilos": 12,
+      "frecuenciaBase": 2.5,
+      "frecuenciaMaxima": 4.4,
+      "cache": 18,
+      "tdp": 65,
+      "tieneGraficosIntegrados": false,
+      "socket": "LGA 1700",
+      "generacion": "Alder Lake (12va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1690,
+      "cinebenchR23Multi": 12450,
+      "passmarkSingle": 3500,
+      "passmarkMulti": 19500,
+      "gaming1080p": 82
+    }
+  },
+  {
+    "id": "cpu_2",
+    "nombre": "i5-12600K",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q4'2021",
+    "tipo": "cpu",
+    "precio": 289,
+    "precioRecomendado": 260,
+    "parametrosBase": {
+      "nucleos": 10,
+      "hilos": 16,
+      "frecuenciaBase": 3.7,
+      "frecuenciaMaxima": 4.9,
+      "cache": 20,
+      "tdp": 125,
+      "tieneGraficosIntegrados": true,
+      "socket": "LGA 1700",
+      "generacion": "Alder Lake (12va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1920,
+      "cinebenchR23Multi": 17600,
+      "passmarkSingle": 3900,
+      "passmarkMulti": 24500,
+      "gaming1080p": 90
+    }
+  },
+  {
+    "id": "cpu_3",
+    "nombre": "i7-12700K",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q4'2021",
+    "tipo": "cpu",
+    "precio": 409,
+    "precioRecomendado": 380,
+    "parametrosBase": {
+      "nucleos": 12,
+      "hilos": 20,
+      "frecuenciaBase": 3.6,
+      "frecuenciaMaxima": 5.0,
+      "cache": 25,
+      "tdp": 125,
+      "tieneGraficosIntegrados": true,
+      "socket": "LGA 1700",
+      "generacion": "Alder Lake (12va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1940,
+      "cinebenchR23Multi": 22800,
+      "passmarkSingle": 4000,
+      "passmarkMulti": 31000,
+      "gaming1080p": 94
+    }
+  },
+  {
+    "id": "cpu_4",
+    "nombre": "i5-13600K",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q3'2022",
+    "tipo": "cpu",
+    "precio": 319,
+    "precioRecomendado": 300,
+    "parametrosBase": {
+      "nucleos": 14,
+      "hilos": 20,
+      "frecuenciaBase": 3.5,
+      "frecuenciaMaxima": 5.1,
+      "cache": 24,
+      "tdp": 125,
+      "tieneGraficosIntegrados": true,
+      "socket": "LGA 1700",
+      "generacion": "Raptor Lake (13va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 2020,
+      "cinebenchR23Multi": 24000,
+      "passmarkSingle": 4200,
+      "passmarkMulti": 34500,
+      "gaming1080p": 96
+    }
+  },
+  {
+    "id": "cpu_5",
+    "nombre": "i7-13700K",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q3'2022",
+    "tipo": "cpu",
+    "precio": 409,
+    "precioRecomendado": 380,
+    "parametrosBase": {
+      "nucleos": 16,
+      "hilos": 24,
+      "frecuenciaBase": 3.4,
+      "frecuenciaMaxima": 5.4,
+      "cache": 30,
+      "tdp": 125,
+      "tieneGraficosIntegrados": true,
+      "socket": "LGA 1700",
+      "generacion": "Raptor Lake (13va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 2120,
+      "cinebenchR23Multi": 30500,
+      "passmarkSingle": 4350,
+      "passmarkMulti": 46000,
+      "gaming1080p": 98
+    }
+  },
+  {
+    "id": "cpu_6",
+    "nombre": "i5-14600K",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q4'2023",
+    "tipo": "cpu",
+    "precio": 319,
+    "precioRecomendado": 290,
+    "parametrosBase": {
+      "nucleos": 14,
+      "hilos": 20,
+      "frecuenciaBase": 3.5,
+      "frecuenciaMaxima": 5.3,
+      "cache": 24,
+      "tdp": 125,
+      "tieneGraficosIntegrados": true,
+      "socket": "LGA 1700",
+      "generacion": "Raptor Lake Refresh (14va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 2060,
+      "cinebenchR23Multi": 24500,
+      "passmarkSingle": 4300,
+      "passmarkMulti": 35000,
+      "gaming1080p": 97
+    }
+  },
+  {
+    "id": "cpu_7",
+    "nombre": "Ryzen 5 5600X",
+    "marca": "amd",
+    "fechaDeLanzamiento": "Q4'2020",
+    "tipo": "cpu",
+    "precio": 299,
+    "precioRecomendado": 220,
+    "parametrosBase": {
+      "nucleos": 6,
+      "hilos": 12,
+      "frecuenciaBase": 3.7,
+      "frecuenciaMaxima": 4.6,
+      "cache": 32,
+      "tdp": 65,
+      "tieneGraficosIntegrados": false,
+      "socket": "AM4",
+      "generacion": "Ryzen 5000 (Zen 3)",
+      "tipoRam": ["ddr4"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1580,
+      "cinebenchR23Multi": 11000,
+      "passmarkSingle": 3300,
+      "passmarkMulti": 22000,
+      "gaming1080p": 84
+    }
+  },
+  {
+    "id": "cpu_8",
+    "nombre": "Ryzen 5 5600",
+    "marca": "amd",
+    "fechaDeLanzamiento": "Q2'2022",
+    "tipo": "cpu",
+    "precio": 199,
+    "precioRecomendado": 160,
+    "parametrosBase": {
+      "nucleos": 6,
+      "hilos": 12,
+      "frecuenciaBase": 3.5,
+      "frecuenciaMaxima": 4.4,
+      "cache": 32,
+      "tdp": 65,
+      "tieneGraficosIntegrados": false,
+      "socket": "AM4",
+      "generacion": "Ryzen 5000 (Zen 3)",
+      "tipoRam": ["ddr4"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1490,
+      "cinebenchR23Multi": 10500,
+      "passmarkSingle": 3100,
+      "passmarkMulti": 21500,
+      "gaming1080p": 82
+    }
+  },
+  {
+    "id": "cpu_9",
+    "nombre": "Ryzen 7 5800X",
+    "marca": "amd",
+    "fechaDeLanzamiento": "Q4'2020",
+    "tipo": "cpu",
+    "precio": 449,
+    "precioRecomendado": 350,
+    "parametrosBase": {
+      "nucleos": 8,
+      "hilos": 16,
+      "frecuenciaBase": 3.8,
+      "frecuenciaMaxima": 4.7,
+      "cache": 32,
+      "tdp": 105,
+      "tieneGraficosIntegrados": false,
+      "socket": "AM4",
+      "generacion": "Ryzen 5000 (Zen 3)",
+      "tipoRam": ["ddr4"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1600,
+      "cinebenchR23Multi": 15200,
+      "passmarkSingle": 3400,
+      "passmarkMulti": 28000,
+      "gaming1080p": 88
+    }
+  },
+  {
+    "id": "cpu_10",
+    "nombre": "Ryzen 5 7600X",
+    "marca": "amd",
+    "fechaDeLanzamiento": "Q3'2022",
+    "tipo": "cpu",
+    "precio": 299,
+    "precioRecomendado": 260,
+    "parametrosBase": {
+      "nucleos": 6,
+      "hilos": 12,
+      "frecuenciaBase": 4.7,
+      "frecuenciaMaxima": 5.3,
+      "cache": 32,
+      "tdp": 105,
+      "tieneGraficosIntegrados": true,
+      "socket": "AM5",
+      "generacion": "Ryzen 7000 (Zen 4)",
+      "tipoRam": ["ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1960,
+      "cinebenchR23Multi": 15000,
+      "passmarkSingle": 4200,
+      "passmarkMulti": 28500,
+      "gaming1080p": 95
+    }
+  },
+  {
+    "id": "cpu_11",
+    "nombre": "Ryzen 7 7700X",
+    "marca": "amd",
+    "fechaDeLanzamiento": "Q3'2022",
+    "tipo": "cpu",
+    "precio": 399,
+    "precioRecomendado": 360,
+    "parametrosBase": {
+      "nucleos": 8,
+      "hilos": 16,
+      "frecuenciaBase": 4.5,
+      "frecuenciaMaxima": 5.4,
+      "cache": 32,
+      "tdp": 105,
+      "tieneGraficosIntegrados": true,
+      "socket": "AM5",
+      "generacion": "Ryzen 7000 (Zen 4)",
+      "tipoRam": ["ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 2000,
+      "cinebenchR23Multi": 19500,
+      "passmarkSingle": 4300,
+      "passmarkMulti": 36000,
+      "gaming1080p": 97
+    }
+  }
+]

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  /* --- Estructura Base --- */
+  --bg-body: #0F172A;      /* Slate 900: Fondo principal */
+  --bg-card: #1E293B;      /* Slate 800: Tarjetas y superficies */
+  --bg-hover: #334155;     /* Slate 700: Hover en listas */
+  --border: #334155;       /* Slate 700: Bordes sutiles */
+  
+  /* --- Tipografía --- */
+  --text-main: #F8FAFC;    /* Slate 50: Títulos y texto importante */
+  --text-muted: #94A3B8;   /* Slate 400: Descripciones y etiquetas */
+  
+  /* --- Acción / Marca --- */
+  --primary: #3B82F6;      /* Blue 500: Botones y enlaces */
+  --primary-hover: #2563EB; /* Blue 600: Hover de botones */
+  
+  /* --- Semáforo de Notas (Ki-Score) --- */
+  --score-good: #10B981;   /* Emerald 500 */
+  --score-mid: #F59E0B;    /* Amber 500 */
+  --score-bad: #EF4444;    /* Red 500 */
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  /* Suavizado de fuentes para modo oscuro */
+  -webkit-font-smoothing: antialiased; 
+}
+
+/* Clases de utilidad personalizadas para los scores */
+.bg-score-good { background-color: var(--score-good); color: #fff; }
+.bg-score-mid { background-color: var(--score-mid); color: #fff; }
+.bg-score-bad { background-color: var(--score-bad); color: #fff; }
+.bg-score-blue { background-color: var(--primary); color: #fff; }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Ocultar flechas de input number en todos los navegadores */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.especificaciones-enter {
+  animation: fadeIn 0.3s ease-out;
+}

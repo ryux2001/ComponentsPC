@@ -1,0 +1,206 @@
+[
+  {
+    "id": "ram_1",
+    "nombre": "Vengeance LPX 16GB (2x8)",
+    "marca": "corsair",
+    "tipo": "ram",
+    "precio": 69,
+    "precioRecomendado": 75,
+    "especificaciones": {
+      "capacidad": "16GB (2x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "3200 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 85
+  },
+  {
+    "id": "ram_2",
+    "nombre": "Ripjaws V 32GB (2x16)",
+    "marca": "g.skill",
+    "tipo": "ram",
+    "precio": 129,
+    "precioRecomendado": 139,
+    "especificaciones": {
+      "capacidad": "32GB (2x16GB)",
+      "generacion": "ddr4",
+      "velocidad": "3600 MT/s",
+      "latencia": "CL18",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 70
+  },
+  {
+    "id": "ram_3",
+    "nombre": "HyperX Fury 8GB",
+    "marca": "hyperx",
+    "tipo": "ram",
+    "precio": 39,
+    "precioRecomendado": 45,
+    "especificaciones": {
+      "capacidad": "8GB (1x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "2666 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.2v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 60
+  },
+  {
+    "id": "ram_4",
+    "nombre": "Ballistix 16GB (2x8)",
+    "marca": "crucial",
+    "tipo": "ram",
+    "precio": 74,
+    "precioRecomendado": 79,
+    "especificaciones": {
+      "capacidad": "16GB (2x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "3200 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 65
+  },
+  {
+    "id": "ram_5",
+    "nombre": "Trident Z5 RGB 32GB (2x16)",
+    "marca": "g.skill",
+    "tipo": "ram",
+    "precio": 199,
+    "precioRecomendado": 209,
+    "especificaciones": {
+      "capacidad": "32GB (2x16GB)",
+      "generacion": "ddr5",
+      "velocidad": "5600 MT/s",
+      "latencia": "CL36",
+      "voltaje": "1.25v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 75
+  },
+  {
+    "id": "ram_6",
+    "nombre": "Fury Beast 16GB SO-DIMM",
+    "marca": "kingston",
+    "tipo": "ram",
+    "precio": 84,
+    "precioRecomendado": 89,
+    "especificaciones": {
+      "capacidad": "16GB (1x16GB)",
+      "generacion": "ddr4",
+      "velocidad": "3200 MT/s",
+      "latencia": "CL22",
+      "voltaje": "1.2v",
+      "tipoModulo": "SO-DIMM"
+    },
+    "popularidad": 50
+  },
+  {
+    "id": "ram_7",
+    "nombre": "Vengeance RGB Pro 32GB (2x16)",
+    "marca": "corsair",
+    "tipo": "ram",
+    "precio": 159,
+    "precioRecomendado": 169,
+    "especificaciones": {
+      "capacidad": "32GB (2x16GB)",
+      "generacion": "ddr4",
+      "velocidad": "3600 MT/s",
+      "latencia": "CL18",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 70
+  },
+  {
+    "id": "ram_8",
+    "nombre": "XMP Pro 16GB (2x8)",
+    "marca": "teamgroup",
+    "tipo": "ram",
+    "precio": 59,
+    "precioRecomendado": 65,
+    "especificaciones": {
+      "capacidad": "16GB (2x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "3000 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 55
+  },
+  {
+    "id": "ram_9",
+    "nombre": "Adata XPG Lancer 32GB (2x16)",
+    "marca": "adata",
+    "tipo": "ram",
+    "precio": 139,
+    "precioRecomendado": 149,
+    "especificaciones": {
+      "capacidad": "32GB (2x16GB)",
+      "generacion": "ddr5",
+      "velocidad": "5200 MT/s",
+      "latencia": "CL40",
+      "voltaje": "1.25v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 60
+  },
+  {
+    "id": "ram_10",
+    "nombre": "Patriot Viper Steel 16GB (2x8)",
+    "marca": "patriot",
+    "tipo": "ram",
+    "precio": 69,
+    "precioRecomendado": 74,
+    "especificaciones": {
+      "capacidad": "16GB (2x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "3200 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.35v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 65
+  },
+  {
+    "id": "ram_11",
+    "nombre": "Samsung DDR5 16GB",
+    "marca": "samsung",
+    "tipo": "ram",
+    "precio": 119,
+    "precioRecomendado": 129,
+    "especificaciones": {
+      "capacidad": "16GB (1x16GB)",
+      "generacion": "ddr5",
+      "velocidad": "4800 MT/s",
+      "latencia": "CL40",
+      "voltaje": "1.1v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 70
+  },
+  {
+    "id": "ram_12",
+    "nombre": "PNY XLR8 8GB",
+    "marca": "pny",
+    "tipo": "ram",
+    "precio": 34,
+    "precioRecomendado": 39,
+    "especificaciones": {
+      "capacidad": "8GB (1x8GB)",
+      "generacion": "ddr4",
+      "velocidad": "2666 MT/s",
+      "latencia": "CL16",
+      "voltaje": "1.2v",
+      "tipoModulo": "DIMM"
+    },
+    "popularidad": 45
+  }
+]
