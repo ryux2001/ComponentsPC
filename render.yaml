@@ -11,15 +11,16 @@ services:
       - key: VITE_SUPABASE_ANON_KEY
         sync: false
 
-  - type: web
+    - type: web
     name: kipc-backend
     runtime: node
     plan: free
     rootDir: server
-    buildCommand: | 
-      pnpm install
-      pnpm list express
-    startCommand: pnpm start
+    buildCommand: |
+      npm install -g pnpm
+      pnpm install --shamefully-hoist
+      ls -la node_modules
+    startCommand: node index.js
     envVars:
       - key: SUPABASE_URL
         sync: false
