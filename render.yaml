@@ -1,0 +1,42 @@
+services:
+  # Frontend - React App
+  - type: web
+    name: kipc-frontend
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
+
+  # Backend - API y Scraper
+  - type: web
+    name: kipc-backend
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /api/health
+
+  # Cron Job - Scraping cada 8 horas
+  - type: cron
+    name: kipc-scraper
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node scripts/cron-scrape.js
+    schedule: "0 */8 * * *"
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false

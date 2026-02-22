@@ -53,7 +53,7 @@ function BusquedaComparador({ tipoPermitido = null, onProductoSeleccionado }) {
   };
 
   return (
-    <div className="relative w-full max-w-md" ref={wrapperRef}>
+    <div className="relative w-full max-w" ref={wrapperRef}>
       <div className="relative group">
         {/* Icono de búsqueda */}
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

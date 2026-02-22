@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import BusquedaComparator from "./BusquedaComparator";
 import NotasProducts from "./NotasProducts";
-import EspecificacionesDetalladas from "./EspecificacionesDetalladas"; // <-- NUEVO
+import EspecificacionesDetalladas from "./EspecificacionesDetalladas";
 
 function Comparator() {
   const {
@@ -12,11 +12,28 @@ function Comparator() {
     eliminarP,
     limpiarC,
   } = useContext(ProductContext);
-  const [startIndex, setStartIndex] = useState(0);
-  const [mostrarEspecificaciones, setMostrarEspecificaciones] = useState(true); // <-- NUEVO
-  const productosPorPagina = 4;
-
+  
+  // Estado para la paginación móvil
+  const [paginaMovil, setPaginaMovil] = useState(0);
+  const [productosVisibles, setProductosVisibles] = useState([]);
+  const productosPorPaginaMovil = 2; // En móvil, 2 productos por página
+  
   const tipoPermitido = comparativa.length > 0 ? comparativa[0].tipo : null;
+  const [mostrarEspecificaciones, setMostrarEspecificaciones] = useState(true);
+
+  // Actualizar productos visibles cuando cambie la página o la comparativa
+  useEffect(() => {
+    const inicio = paginaMovil * productosPorPaginaMovil;
+    const fin = inicio + productosPorPaginaMovil;
+    setProductosVisibles(comparativa.slice(inicio, fin));
+  }, [paginaMovil, comparativa]);
+
+  // Resetear página cuando cambia la comparativa
+  useEffect(() => {
+    setPaginaMovil(0);
+  }, [comparativa.length]);
+
+  const totalPaginasMovil = Math.ceil(comparativa.length / productosPorPaginaMovil);
 
   const agregarProducto = (producto) => {
     const yaExiste = comparativa.find((p) => p.id === producto.id);
@@ -35,15 +52,12 @@ function Comparator() {
     setComparativa([...comparativa, producto]);
   };
 
-  const handleNext = () => {
-    if (startIndex + productosPorPagina < comparativa.length) {
-      setStartIndex(startIndex + productosPorPagina);
-    }
+  const irPaginaAnterior = () => {
+    setPaginaMovil(prev => Math.max(0, prev - 1));
   };
-  const handlePrev = () => {
-    if (startIndex - productosPorPagina >= 0) {
-      setStartIndex(startIndex - productosPorPagina);
-    }
+
+  const irPaginaSiguiente = () => {
+    setPaginaMovil(prev => Math.min(totalPaginasMovil - 1, prev + 1));
   };
 
   return (
@@ -61,7 +75,6 @@ function Comparator() {
         
         {comparativa.length > 0 && (
           <div className="flex gap-3">
-            {/* NUEVO: Botón para ocultar/mostrar especificaciones */}
             <button
               onClick={() => setMostrarEspecificaciones(!mostrarEspecificaciones)}
               className="px-4 py-2 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] border border-[var(--border)] rounded-lg hover:bg-[var(--bg-card)] transition-colors"
@@ -113,78 +126,122 @@ function Comparator() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {comparativa.map((p, i) => {
-                const isVisibleEnMovil = i >= startIndex && i < startIndex + productosPorPagina;
-                
-                return (
-                  <div
-                    key={p.id}
-                    className={`relative flex flex-col bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-xl transition-transform hover:-translate-y-1 duration-300 ${
-                      isVisibleEnMovil ? "block" : "hidden lg:block"
-                    }`}
-                  >
-                    {/* Encabezado Tarjeta */}
-                    <div className="p-5 border-b border-[var(--border)] bg-gradient-to-b from-[var(--bg-card)] to-[#151f30]">
-                      <div className="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[var(--bg-body)] text-[var(--text-muted)] mb-2 border border-[var(--border)]">
-                        {p.tipo}
-                      </div>
-                      <h3 className="text-xl font-bold text-[var(--text-main)] leading-tight h-14 overflow-hidden line-clamp-2">
-                        {p.nombre}
-                      </h3>
-                      <div className="mt-2 flex justify-between items-end">
-                         <span className="text-sm text-[var(--text-muted)]">{p.marca}</span>
-                         <span className="text-lg font-bold text-[var(--primary)]">
-                           ${p.precio}
-                         </span>
-                      </div>
-                    </div>
-
-                    {/* Cuerpo Notas */}
-                    <div className="p-5 flex-grow">
-                      <NotasProducts product={p} />
-                    </div>
-
-                    {/* Footer Acción */}
-                    <div className="p-4 pt-0 mt-auto">
-                      <button
-                        onClick={() => eliminarP(p.id)}
-                        className="w-full py-2.5 text-sm font-medium text-red-400 hover:text-white border border-red-900/30 hover:bg-red-600 rounded-lg transition-all"
-                      >
-                        Quitar
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Desktop: Grid de 4 columnas */}
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {comparativa.map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={p}
+                  onRemove={eliminarP}
+                />
+              ))}
             </div>
 
-            {/* NUEVO: Especificaciones Detalladas */}
-            {mostrarEspecificaciones && comparativa.length > 0 && (
-              <EspecificacionesDetalladas productos={comparativa} />
-            )}
+            {/* Móvil: Grid de 2 columnas con paginación */}
+            <div className="md:hidden">
+              <div className="grid grid-cols-2 gap-1">
+                {productosVisibles.map((p) => (
+                  <ProductCard
+                    key={p.id}
+                    product={p}
+                    onRemove={eliminarP}
+                  />
+                ))}
+              </div>
 
-            {/* Paginación para móvil (si es necesaria) */}
-            {comparativa.length > productosPorPagina && (
-              <div className="flex justify-center gap-4 mt-8 lg:hidden">
-                <button
-                  onClick={handlePrev}
-                  disabled={startIndex === 0}
-                  className="px-4 py-2 text-sm font-medium border border-[var(--border)] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--bg-card)] transition-colors"
-                >
-                  ← Anterior
-                </button>
-                <button
-                  onClick={handleNext}
-                  disabled={startIndex + productosPorPagina >= comparativa.length}
-                  className="px-4 py-2 text-sm font-medium border border-[var(--border)] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[var(--bg-card)] transition-colors"
-                >
-                  Siguiente →
-                </button>
+              {/* Controles de paginación móvil */}
+              {comparativa.length > 2 && (
+                <div className="flex items-center justify-between mt-6 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-3">
+                  <button
+                    onClick={irPaginaAnterior}
+                    disabled={paginaMovil === 0}
+                    className="px-4 py-2 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    ← Anterior
+                  </button>
+                  
+                  <div className="flex gap-2">
+                    {Array.from({ length: totalPaginasMovil }).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setPaginaMovil(idx)}
+                        className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
+                          paginaMovil === idx
+                            ? "bg-[var(--primary)] text-white"
+                            : "text-[var(--text-muted)] hover:text-[var(--text-main)] border border-[var(--border)]"
+                        }`}
+                      >
+                        {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={irPaginaSiguiente}
+                    disabled={paginaMovil === totalPaginasMovil - 1}
+                    className="px-4 py-2 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    Siguiente →
+                  </button>
+                </div>
+              )}
+
+              {/* Indicador de página actual */}
+              <p className="text-center text-xs text-[var(--text-muted)] mt-3">
+                Mostrando {productosVisibles.length} de {comparativa.length} productos
+                {totalPaginasMovil > 1 && ` (Página ${paginaMovil + 1} de ${totalPaginasMovil})`}
+              </p>
+            </div>
+
+            {/* Especificaciones Detalladas - SOLO de los productos visibles en móvil */}
+            {mostrarEspecificaciones && productosVisibles.length > 0 && (
+              <div className="mt-8">
+                <h2 className="text-xl font-bold text-[var(--text-main)] mb-4 md:hidden">
+                  Especificaciones comparadas
+                </h2>
+                <EspecificacionesDetalladas productos={productosVisibles} />
               </div>
             )}
           </>
         )}
+      </div>
+    </div>
+  );
+}
+
+// Componente ProductCard separado para reutilización
+function ProductCard({ product, onRemove }) {
+  return (
+    <div className="relative flex flex-col bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-xl transition-transform hover:-translate-y-1 duration-300 h-full">
+      {/* Encabezado Tarjeta - más compacto en móvil */}
+      <div className="p-3 md:p-5 border-b border-[var(--border)] bg-gradient-to-b from-[var(--bg-card)] to-[#151f30]">
+        <div className="inline-block px-1.5 md:px-2 py-0.5 rounded text-[8px] md:text-[10px] font-bold uppercase tracking-wider bg-[var(--bg-body)] text-[var(--text-muted)] mb-1 md:mb-2 border border-[var(--border)]">
+          {product.tipo}
+        </div>
+        <h3 className="text-sm md:text-xl font-bold text-[var(--text-main)] leading-tight line-clamp-2 min-h-[2.5rem] md:min-h-[3.5rem]">
+          {product.nombre}
+        </h3>
+        <div className="mt-1 md:mt-2 flex justify-between items-center">
+          <span className="text-xs md:text-sm text-[var(--text-muted)]">{product.marca}</span>
+          <span className="text-sm md:text-lg font-bold text-[var(--primary)]">
+            ${product.precio}
+          </span>
+        </div>
+      </div>
+
+      {/* Cuerpo Notas - más compacto */}
+      <div className="p-3 md:p-5 flex-grow">
+        <NotasProducts product={product} />
+      </div>
+
+      {/* Footer Acción - más compacto */}
+      <div className="p-3 md:p-4 pt-0 md:pt-0 mt-auto">
+        <button
+          onClick={() => onRemove(product.id)}
+          className="w-full py-2 md:py-2.5 text-xs md:text-sm font-medium text-red-400 hover:text-white border border-red-900/30 hover:bg-red-600 rounded-lg transition-all"
+        >
+          Quitar
+        </button>
       </div>
     </div>
   );
