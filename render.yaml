@@ -11,7 +11,7 @@ services:
       - key: VITE_SUPABASE_ANON_KEY
         sync: false
 
-    - type: web
+  - type: web
     name: kipc-backend
     runtime: node
     plan: free
