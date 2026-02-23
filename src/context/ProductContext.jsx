@@ -8,7 +8,7 @@ export function ProductContextProvider(props) {
   const [datos, setDatos] = useState([]);
   const [comparativa, setComparativa] = useState([]);
 
-  //#region Utilidades de Clasificación y Máximos
+  //#region Utilidades de Clasificación y Máximos (GPU)
   function getGeneracionGpu(gpu) {
     const name = gpu.nombre.toLowerCase();
     let match = name.match(/rtx\s*(\d{4})/);
@@ -34,7 +34,7 @@ export function ProductContextProvider(props) {
     return "baja";
   }
 
-  const obtenerMaximosGlobales = (listaGpus) => {
+  const obtenerMaximosGlobalesGpu = (listaGpus) => {
     let maximos = { potencia: 0, eficiencia: 0, relacion: 0 };
     listaGpus.forEach((gpu) => {
       const r = gpu.benchmarks.fps1080pUltra * 0.3 + 
@@ -51,21 +51,57 @@ export function ProductContextProvider(props) {
   };
   //#endregion
 
-  const calcularNotasGpu = (gpu, listaGpus) => {
-    const maxGlobal = obtenerMaximosGlobales(listaGpus);
+  //#region Utilidades de Clasificación y Máximos (CPU)
+  /**
+   * Obtiene el número de generación de una CPU basado en el campo generacion
+   * Ejemplo: "Alder Lake (12va generacion)" -> 12
+   * "Ryzen 7000 (Zen 4)" -> 7000
+   */
+  function getGeneracionCpu(cpu) {
+    const genStr = cpu.parametrosBase.generacion.toLowerCase();
+    // Busca el primer número en la cadena (ej. "12va", "13th", "7000")
+    const match = genStr.match(/(\d+)/);
+    if (match) return parseInt(match[1]);
+    return 0;
+  }
 
-    // 1. POTENCIA
+  /**
+   * Calcula los máximos globales de rendimiento, eficiencia y relación calidad/precio
+   * para todas las CPUs de la lista.
+   */
+  const obtenerMaximosGlobalesCpu = (listaCpus) => {
+    let maximos = { potencia: 0, eficiencia: 0, relacion: 0 };
+    listaCpus.forEach((cpu) => {
+      // Índice de rendimiento: 30% single-core, 50% multi-core, 20% gaming
+      const rendimiento = 
+        (cpu.benchmarks.cinebenchR23Single * 0.3) +
+        (cpu.benchmarks.cinebenchR23Multi * 0.5) +
+        (cpu.benchmarks.gaming1080p * 0.2);
+      
+      const eficiencia = rendimiento / cpu.parametrosBase.tdp;
+      const relacion = rendimiento / cpu.precio;
+
+      if (rendimiento > maximos.potencia) maximos.potencia = rendimiento;
+      if (eficiencia > maximos.eficiencia) maximos.eficiencia = eficiencia;
+      if (relacion > maximos.relacion) maximos.relacion = relacion;
+    });
+    return maximos;
+  };
+  //#endregion
+
+  // Cálculo de notas para GPU (sin cambios)
+  const calcularNotasGpu = (gpu, listaGpus) => {
+    const maxGlobal = obtenerMaximosGlobalesGpu(listaGpus);
+
     const rendimiento =
       gpu.benchmarks.fps1080pUltra * 0.3 +
       gpu.benchmarks.fps1440pUltra * 0.4 +
       gpu.benchmarks.fps4kUltra * 0.3;
     const potencia = (rendimiento / maxGlobal.potencia) * 10;
 
-    // 2. EFICIENCIA
     const eficienciaReal = rendimiento / gpu.parametrosBase.tdp;
     const eficiencia = Math.min((eficienciaReal / maxGlobal.eficiencia) * 10, 10);
 
-    // 3. TECNOLOGÍAS
     let tecnologias = 5;
     const gen = getGeneracionGpu(gpu);
     const marca = gpu.marca.toLowerCase();
@@ -84,7 +120,6 @@ export function ProductContextProvider(props) {
       tecnologias = 5;
     }
 
-    // 4. CALIDAD / PRECIO
     const fpsPerDollar = rendimiento / gpu.precio;
     const nombre = gpu.nombre.toLowerCase();
     const marca2 = gpu.marca.toLowerCase();
@@ -111,13 +146,71 @@ export function ProductContextProvider(props) {
     };
   };
 
-  const calcularNotasCpu = (cpu) => {
+  // NUEVO: Cálculo de notas para CPU (dinámico, similar a GPU)
+  const calcularNotasCpu = (cpu, listaCpus) => {
+    // Si la lista está vacía (cargando), devolver ceros
+    if (!listaCpus || listaCpus.length === 0) {
+      return {
+        nombre: cpu.nombre,
+        potencia: "0.0",
+        eficiencia: "0.0",
+        tecnologias: "0.0",
+        calidadPrecio: "0.0"
+      };
+    }
+
+    const maxGlobal = obtenerMaximosGlobalesCpu(listaCpus);
+
+    // Índice de rendimiento combinado (30% single, 50% multi, 20% gaming)
+    const rendimiento = 
+      (cpu.benchmarks.cinebenchR23Single * 0.3) +
+      (cpu.benchmarks.cinebenchR23Multi * 0.5) +
+      (cpu.benchmarks.gaming1080p * 0.2);
+
+    // 1. POTENCIA (escala sobre el máximo de rendimiento)
+    const potencia = (rendimiento / maxGlobal.potencia) * 10;
+
+    // 2. EFICIENCIA (rendimiento por vatio)
+    const eficienciaReal = rendimiento / cpu.parametrosBase.tdp;
+    const eficiencia = maxGlobal.eficiencia > 0
+      ? Math.min((eficienciaReal / maxGlobal.eficiencia) * 10, 10)
+      : 0;
+
+    // 3. TECNOLOGÍAS (basada en generación, gráficos integrados, tipo de RAM)
+    let tecnologias = 5;
+    const gen = getGeneracionCpu(cpu);
+    const marca = cpu.marca.toLowerCase();
+    const tieneGraficos = cpu.parametrosBase.tieneGraficosIntegrados;
+    const tipoRam = cpu.parametrosBase.tipoRam || [];
+
+    if (marca === "intel") {
+      if (gen >= 14) tecnologias = 9;
+      else if (gen >= 13) tecnologias = 8;
+      else if (gen >= 12) tecnologias = 7;
+      else tecnologias = 6;
+    } else if (marca === "amd") {
+      if (gen >= 7000) tecnologias = 9;
+      else if (gen >= 5000) tecnologias = 8;
+      else tecnologias = 7;
+    }
+
+    // Bonificaciones
+    if (tieneGraficos) tecnologias += 0.5;
+    if (tipoRam.includes("ddr5")) tecnologias += 0.5;
+    tecnologias = Math.min(tecnologias, 10);
+
+    // 4. CALIDAD / PRECIO
+    const relacionAjustada = rendimiento / cpu.precio;
+    const notaCP = maxGlobal.relacion > 0
+      ? Math.min((relacionAjustada / maxGlobal.relacion) * 10, 10)
+      : 0;
+
     return {
       nombre: cpu.nombre,
-      potencia: "7.5",
-      eficiencia: "8.0",
-      tecnologias: "9.0",
-      calidadPrecio: "8.5"
+      potencia: potencia.toFixed(1),
+      eficiencia: eficiencia.toFixed(1),
+      tecnologias: tecnologias.toFixed(1),
+      calidadPrecio: notaCP.toFixed(1),
     };
   };
 

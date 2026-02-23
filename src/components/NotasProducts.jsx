@@ -2,7 +2,7 @@ import { useContext, useState, useMemo } from "react";
 import { ProductContext } from "../context/ProductContext";
 
 function NotasProducts({ product }) {
-  const { calcularNotasGpu, calcularNotasCpu, dataGpu } = useContext(ProductContext);
+  const { calcularNotasGpu, calcularNotasCpu, dataGpu, dataCpu } = useContext(ProductContext);
   
   const preciosDisponibles = useMemo(() => {
     const lista = [product.precioRecomendado, ...(product.preciosAlternativos || [])];
@@ -16,7 +16,7 @@ function NotasProducts({ product }) {
   const notas =
     product.tipo === "gpu"
       ? calcularNotasGpu(productoParaNotas, dataGpu)
-      : calcularNotasCpu(productoParaNotas);
+      : calcularNotasCpu(productoParaNotas, dataCpu);
 
   const getScoreClass = (score) => {
     const num = parseFloat(score);
@@ -28,11 +28,10 @@ function NotasProducts({ product }) {
 
   return (
     <div className="flex flex-col gap-2 md:gap-4">
-      {/* Selector de precio - Listado Vertical */}
       {preciosDisponibles.length > 1 && (
         <div className="mb-3 p-2 bg-[var(--bg-body)] rounded-lg border border-[var(--border)]">
           <p className="text-xs text-[var(--text-muted)] mb-2 font-medium">Selecciona precio:</p>
-          <div className="flex flex-col gap-2"> {/* Forzado a columna siempre */}
+          <div className="flex flex-col gap-2">
             {preciosDisponibles.map((precio, idx) => (
               <button
                 key={idx}
@@ -55,7 +54,6 @@ function NotasProducts({ product }) {
         </div>
       )}
 
-      {/* Sección de Notas Técnicas */}
       <div className="space-y-2 md:space-y-3">
         {[
           { label: "Potencia Pura", value: notas.potencia },
@@ -83,7 +81,6 @@ function NotasProducts({ product }) {
 
       <div className="h-px w-full bg-[var(--border)] my-0.5 md:my-1"></div>
 
-      {/* Calidad / Precio */}
       <div className="flex justify-between items-center bg-[var(--bg-body)] p-2 md:p-3 rounded-xl border border-[var(--border)]">
         <div className="flex flex-col">
           <span className="text-[8px] md:text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest">
