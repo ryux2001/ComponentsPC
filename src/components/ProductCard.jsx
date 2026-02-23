@@ -26,7 +26,7 @@ const ProductCard = ({ product, onAddToCompare }) => {
   };
 
   return (
-    <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300 flex flex-col h-full">
+    <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl duration-300 flex flex-col h-full">
       {/* Cabecera con tipo y nombre */}
       <div className="p-5 border-b border-[var(--border)]">
         <div className="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[var(--bg-body)] text-[var(--text-muted)] mb-2 border border-[var(--border)]">

@@ -212,7 +212,7 @@ function Comparator() {
 // Componente ProductCard separado para reutilización
 function ProductCard({ product, onRemove }) {
   return (
-    <div className="relative flex flex-col bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-xl transition-transform hover:-translate-y-1 duration-300 h-full">
+    <div className="relative flex flex-col bg-[var(--bg-card)] border border-[var(--border)] rounded-xl overflow-hidden shadow-xl duration-300 h-full">
       {/* Encabezado Tarjeta - más compacto en móvil */}
       <div className="p-3 md:p-5 border-b border-[var(--border)] bg-gradient-to-b from-[var(--bg-card)] to-[#151f30]">
         <div className="inline-block px-1.5 md:px-2 py-0.5 rounded text-[8px] md:text-[10px] font-bold uppercase tracking-wider bg-[var(--bg-body)] text-[var(--text-muted)] mb-1 md:mb-2 border border-[var(--border)]">
