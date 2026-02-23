@@ -1,0 +1,31 @@
+[
+    {
+    "id": "cpu_1",
+    "nombre": "i5-12400F",
+    "marca": "intel",
+    "fechaDeLanzamiento": "Q1'2022",
+    "tipo": "cpu",
+    "precio": 80,
+    "precioRecomendado": 100,
+    "preciosAlternativos": [90, 110, 120],
+    "parametrosBase": {
+      "nucleos": 6,
+      "hilos": 12,
+      "frecuenciaBase": 2.5,
+      "frecuenciaMaxima": 4.4,
+      "cache": 18,
+      "tdp": 65,
+      "tieneGraficosIntegrados": false,
+      "socket": "LGA 1700",
+      "generacion": "Alder Lake (12va generacion)",
+      "tipoRam": ["ddr4", "ddr5"]
+    },
+    "benchmarks": {
+      "cinebenchR23Single": 1690,
+      "cinebenchR23Multi": 12450,
+      "passmarkSingle": 3500,
+      "passmarkMulti": 19500,
+      "gaming1080p": 82
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+    {
+    "id": "gpu_1",
+    "nombre": "nvidia GeForce RTX 3060 12GB",
+    "marca": "nvidia",
+    "tipo": "gpu",
+    "fechaDeLanzamiento": "Q1 2021",
+    "precio": 329,
+    "precioRecomendado": 299,
+    "preciosAlternativos": [269, 329, 359],
+    "parametrosBase": {
+      "vram": 12,
+      "bus": 192,
+      "tipoVram": "GDDR6",
+      "nucleosCuda": 3584,
+      "tensorCores": 112,
+      "rtCores": 28,
+      "longitud": 242,
+      "tdp": 170
+    },
+    "benchmarks": {
+      "timeSpy": 8750,
+      "fireStrike": 20500,
+      "portRoyal": 5050,
+      "fps1080pUltra": 80,
+      "fps1440pUltra": 60,
+      "fps4kUltra": 30
+    }
+  }
+]

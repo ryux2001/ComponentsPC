@@ -7,6 +7,7 @@
     "tipo": "cpu",
     "precio": 80,
     "precioRecomendado": 100,
+    "preciosAlternativos": [90, 110, 120],
     "parametrosBase": {
       "nucleos": 6,
       "hilos": 12,
@@ -35,6 +36,7 @@
     "tipo": "cpu",
     "precio": 289,
     "precioRecomendado": 260,
+    "preciosAlternativos": [234, 286, 312],
     "parametrosBase": {
       "nucleos": 10,
       "hilos": 16,
@@ -63,6 +65,7 @@
     "tipo": "cpu",
     "precio": 409,
     "precioRecomendado": 380,
+    "preciosAlternativos": [342, 418, 456],
     "parametrosBase": {
       "nucleos": 12,
       "hilos": 20,
@@ -91,6 +94,7 @@
     "tipo": "cpu",
     "precio": 319,
     "precioRecomendado": 300,
+    "preciosAlternativos": [270, 330, 360],
     "parametrosBase": {
       "nucleos": 14,
       "hilos": 20,
@@ -119,6 +123,7 @@
     "tipo": "cpu",
     "precio": 409,
     "precioRecomendado": 380,
+    "preciosAlternativos": [342, 418, 456],
     "parametrosBase": {
       "nucleos": 16,
       "hilos": 24,
@@ -147,6 +152,7 @@
     "tipo": "cpu",
     "precio": 319,
     "precioRecomendado": 290,
+    "preciosAlternativos": [261, 319, 348],
     "parametrosBase": {
       "nucleos": 14,
       "hilos": 20,
@@ -175,6 +181,7 @@
     "tipo": "cpu",
     "precio": 299,
     "precioRecomendado": 220,
+    "preciosAlternativos": [198, 242, 264],
     "parametrosBase": {
       "nucleos": 6,
       "hilos": 12,
@@ -203,6 +210,7 @@
     "tipo": "cpu",
     "precio": 199,
     "precioRecomendado": 160,
+    "preciosAlternativos": [144, 176, 192],
     "parametrosBase": {
       "nucleos": 6,
       "hilos": 12,
@@ -231,6 +239,7 @@
     "tipo": "cpu",
     "precio": 449,
     "precioRecomendado": 350,
+    "preciosAlternativos": [315, 385, 420],
     "parametrosBase": {
       "nucleos": 8,
       "hilos": 16,
@@ -259,6 +268,7 @@
     "tipo": "cpu",
     "precio": 299,
     "precioRecomendado": 260,
+    "preciosAlternativos": [234, 286, 312],
     "parametrosBase": {
       "nucleos": 6,
       "hilos": 12,
@@ -287,6 +297,7 @@
     "tipo": "cpu",
     "precio": 399,
     "precioRecomendado": 360,
+    "preciosAlternativos": [324, 396, 432],
     "parametrosBase": {
       "nucleos": 8,
       "hilos": 16,

@@ -7,6 +7,7 @@
     "fechaDeLanzamiento": "Q1 2021",
     "precio": 329,
     "precioRecomendado": 299,
+    "preciosAlternativos": [269, 329, 359],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -34,6 +35,7 @@
     "fechaDeLanzamiento": "Q4 2020",
     "precio": 399,
     "precioRecomendado": 399,
+    "preciosAlternativos": [359, 439, 479],
     "parametrosBase": {
       "vram": 8,
       "bus": 256,
@@ -61,6 +63,7 @@
     "fechaDeLanzamiento": "Q2 2023",
     "precio": 299,
     "precioRecomendado": 299,
+    "preciosAlternativos": [269, 329, 359],
     "parametrosBase": {
       "vram": 8,
       "bus": 128,
@@ -88,6 +91,7 @@
     "fechaDeLanzamiento": "Q2 2023",
     "precio": 599,
     "precioRecomendado": 549,
+    "preciosAlternativos": [494, 604, 659],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -115,6 +119,7 @@
     "fechaDeLanzamiento": "Q4 2021",
     "precio": 329,
     "precioRecomendado": 299,
+    "preciosAlternativos": [269, 329, 359],
     "parametrosBase": {
       "vram": 8,
       "bus": 128,
@@ -142,6 +147,7 @@
     "fechaDeLanzamiento": "Q1 2021",
     "precio": 479,
     "precioRecomendado": 479,
+    "preciosAlternativos": [431, 527, 575],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -169,6 +175,7 @@
     "fechaDeLanzamiento": "Q2 2023",
     "precio": 269,
     "precioRecomendado": 269,
+    "preciosAlternativos": [242, 296, 323],
     "parametrosBase": {
       "vram": 8,
       "bus": 128,
@@ -196,6 +203,7 @@
     "fechaDeLanzamiento": "Q3 2020",
     "precio": 699,
     "precioRecomendado": 699,
+    "preciosAlternativos": [629, 769, 839],
     "parametrosBase": {
       "vram": 10,
       "bus": 320,
@@ -223,6 +231,7 @@
     "fechaDeLanzamiento": "Q4 2020",
     "precio": 499,
     "precioRecomendado": 499,
+    "preciosAlternativos": [449, 549, 599],
     "parametrosBase": {
       "vram": 8,
       "bus": 256,
@@ -250,6 +259,7 @@
     "fechaDeLanzamiento": "Q4 2023",
     "precio": 799,
     "precioRecomendado": 799,
+    "preciosAlternativos": [719, 879, 959],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -277,6 +287,7 @@
     "fechaDeLanzamiento": "Q4 2020",
     "precio": 649,
     "precioRecomendado": 649,
+    "preciosAlternativos": [584, 714, 779],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -304,6 +315,7 @@
     "fechaDeLanzamiento": "Q4 2022",
     "precio": 899,
     "precioRecomendado": 899,
+    "preciosAlternativos": [809, 989, 1079],
     "parametrosBase": {
       "vram": 20,
       "bus": 384,
@@ -331,6 +343,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 1999,
     "precioRecomendado": 1999,
+    "preciosAlternativos": [1799, 2199, 2399],
     "parametrosBase": {
       "vram": 32,
       "bus": 512,
@@ -358,6 +371,7 @@
     "fechaDeLanzamiento": "Q4 2022",
     "precio": 99,
     "precioRecomendado": 99,
+    "preciosAlternativos": [89, 109, 119],
     "parametrosBase": {
       "vram": 4,
       "bus": 64,
@@ -386,6 +400,7 @@
     "fechaDeLanzamiento": "Q3 2022",
     "precio": 139,
     "precioRecomendado": 139,
+    "preciosAlternativos": [125, 153, 167],
     "parametrosBase": {
       "vram": 6,
       "bus": 96,
@@ -414,6 +429,7 @@
     "fechaDeLanzamiento": "Q4 2023",
     "precio": 179,
     "precioRecomendado": 179,
+    "preciosAlternativos": [161, 197, 215],
     "parametrosBase": {
       "vram": 8,
       "bus": 256,
@@ -442,6 +458,7 @@
     "fechaDeLanzamiento": "Q4 2022",
     "precio": 249,
     "precioRecomendado": 249,
+    "preciosAlternativos": [224, 274, 299],
     "parametrosBase": {
       "vram": 8,
       "bus": 256,
@@ -470,6 +487,7 @@
     "fechaDeLanzamiento": "Q4 2022",
     "precio": 349,
     "precioRecomendado": 349,
+    "preciosAlternativos": [314, 384, 419],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -498,6 +516,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 219,
     "precioRecomendado": 219,
+    "preciosAlternativos": [197, 241, 263],
     "parametrosBase": {
       "vram": 10,
       "bus": 160,
@@ -526,6 +545,7 @@
     "fechaDeLanzamiento": "Q4 2024",
     "precio": 249,
     "precioRecomendado": 249,
+    "preciosAlternativos": [224, 274, 299],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -554,6 +574,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 999,
     "precioRecomendado": 999,
+    "preciosAlternativos": [899, 1099, 1199],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -581,6 +602,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 749,
     "precioRecomendado": 749,
+    "preciosAlternativos": [674, 824, 899],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -608,6 +630,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 549,
     "precioRecomendado": 549,
+    "preciosAlternativos": [494, 604, 659],
     "parametrosBase": {
       "vram": 12,
       "bus": 192,
@@ -635,6 +658,7 @@
     "fechaDeLanzamiento": "Q2 2025",
     "precio": 429,
     "precioRecomendado": 429,
+    "preciosAlternativos": [386, 472, 515],
     "parametrosBase": {
       "vram": 16,
       "bus": 128,
@@ -662,6 +686,7 @@
     "fechaDeLanzamiento": "Q2 2025",
     "precio": 299,
     "precioRecomendado": 299,
+    "preciosAlternativos": [269, 329, 359],
     "parametrosBase": {
       "vram": 8,
       "bus": 128,
@@ -689,6 +714,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 599,
     "precioRecomendado": 599,
+    "preciosAlternativos": [539, 659, 719],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -717,6 +743,7 @@
     "fechaDeLanzamiento": "Q1 2025",
     "precio": 549,
     "precioRecomendado": 549,
+    "preciosAlternativos": [494, 604, 659],
     "parametrosBase": {
       "vram": 16,
       "bus": 256,
@@ -745,6 +772,7 @@
     "fechaDeLanzamiento": "Q2 2025",
     "precio": 349,
     "precioRecomendado": 349,
+    "preciosAlternativos": [314, 384, 419],
     "parametrosBase": {
       "vram": 16,
       "bus": 128,
