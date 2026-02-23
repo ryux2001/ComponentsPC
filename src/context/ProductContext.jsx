@@ -1,15 +1,12 @@
 import { useState, useEffect, createContext } from "react";
 import datosCpu from "../data/cpu.json";
 import datosGpu from "../data/graficas.json";
-import { getPreciosActuales } from "../services/precioService";
 
 export const ProductContext = createContext();
 
 export function ProductContextProvider(props) {
   const [datos, setDatos] = useState([]);
   const [comparativa, setComparativa] = useState([]);
-  const [preciosActuales, setPreciosActuales] = useState({});
-  const [cargandoPrecios, setCargandoPrecios] = useState(true);
 
   //#region Utilidades de Clasificación y Máximos
   function getGeneracionGpu(gpu) {
@@ -54,7 +51,6 @@ export function ProductContextProvider(props) {
   };
   //#endregion
 
-  // Funciones de cálculo de notas
   const calcularNotasGpu = (gpu, listaGpus) => {
     const maxGlobal = obtenerMaximosGlobales(listaGpus);
 
@@ -116,7 +112,6 @@ export function ProductContextProvider(props) {
   };
 
   const calcularNotasCpu = (cpu) => {
-    // Por ahora valores de ejemplo, puedes mejorarlos después
     return {
       nombre: cpu.nombre,
       potencia: "7.5",
@@ -143,46 +138,8 @@ export function ProductContextProvider(props) {
     setDatos(datosCombinados);
   }, []);
 
-  // Cargar precios actualizados
-  useEffect(() => {
-    async function cargarPrecios() {
-      setCargandoPrecios(true);
-      const precios = await getPreciosActuales();
-      console.log("[ProductContext] Precios actualizados:", precios);
-      setPreciosActuales(precios);
-      setCargandoPrecios(false);
-    }
-    
-    cargarPrecios();
-    
-    // Recargar precios cada 5 minutos
-    const intervalo = setInterval(cargarPrecios, 5 * 60 * 1000);
-    return () => clearInterval(intervalo);
-  }, []);
-
-  // Actualizar precios en los datos cuando cambien
-  useEffect(() => {
-    if (Object.keys(preciosActuales).length > 0 && datos.length > 0) {
-      console.log("[ProductContext] Actualizando precios en productos...");
-      setDatos(prev => prev.map(producto => {
-        const precioActualizado = preciosActuales[producto.id];
-        if (precioActualizado) {
-          return {
-            ...producto,
-            precio: precioActualizado.precio,
-            precioAnterior: producto.precio,
-            fechaActualizacion: precioActualizado.fecha
-          };
-        }
-        return producto;
-      }));
-    }
-  }, [preciosActuales, datos.length]);
-
   const dataGpuFiltrada = datos.filter((p) => p.tipo === "gpu");
   const dataCpuFiltrada = datos.filter((p) => p.tipo === "cpu");
-  
-  console.log("[ProductContext] datos finales:", datos?.length);
 
   return (
     <ProductContext.Provider
@@ -196,8 +153,6 @@ export function ProductContextProvider(props) {
         limpiarC,
         eliminarP,
         setComparativa,
-        cargandoPrecios,
-        ultimaActualizacionPrecios: Object.values(preciosActuales)[0]?.fecha
       }}
     >
       {props.children}
